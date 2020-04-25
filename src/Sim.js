@@ -475,7 +475,7 @@ export default class Sim extends React.Component {
           }else if(this.state.vox===-52){
             this.state.noes=this.state.noes-52;
             this.state.abs=this.state.abs+52;
-          }else if(this.state.vox===0){
+          }else if(this.state.vox===null){
             this.state.abs=this.state.abs+52;
           }
           this.setState({vox:0});
@@ -489,7 +489,7 @@ export default class Sim extends React.Component {
           }else if(this.state.up===-35){
             this.state.noes=this.state.noes-35;
             this.state.abs=this.state.abs+35;
-          }else if(this.state.up===0){
+          }else if(this.state.up===null){
             this.state.abs=this.state.abs+35;
           }
           this.setState({up:0});
@@ -503,7 +503,7 @@ export default class Sim extends React.Component {
           }else if(this.state.erc===-13){
             this.state.noes=this.state.noes-13;
             this.state.abs=this.state.abs+13;
-          }else if(this.state.erc===0){
+          }else if(this.state.erc===null){
             this.state.abs=this.state.abs+13;
           }
           this.setState({erc:0});
@@ -517,7 +517,7 @@ export default class Sim extends React.Component {
           }else if(this.state.cs===-10){
             this.state.noes=this.state.noes-10;
             this.state.abs=this.state.abs+10;
-          }else if(this.state.cs===0){
+          }else if(this.state.cs===null){
             this.state.abs=this.state.abs+10;
           }
           this.setState({cs:0});
@@ -531,7 +531,7 @@ export default class Sim extends React.Component {
           }else if(this.state.jxcat===-8){
             this.state.noes=this.state.noes-8;
             this.state.abs=this.state.abs+8;
-          }else if(this.state.jxcat===0){
+          }else if(this.state.jxcat===null){
             this.state.abs=this.state.abs+8;
           }
           this.setState({jxcat:0});
@@ -545,7 +545,7 @@ export default class Sim extends React.Component {
           }else if(this.state.pnv===-6){
             this.state.noes=this.state.noes-6;
             this.state.abs=this.state.abs+6;
-          }else if(this.state.pnv===0){
+          }else if(this.state.pnv===null){
             this.state.abs=this.state.abs+6;
           }
           this.setState({pnv:0});
@@ -559,7 +559,7 @@ export default class Sim extends React.Component {
           }else if(this.state.bildu===-5){
             this.state.noes=this.state.noes-5;
             this.state.abs=this.state.abs+5;
-          }else if(this.state.bildu===0){
+          }else if(this.state.bildu===null){
             this.state.abs=this.state.abs+5;
           }
           this.setState({bildu:0});
@@ -573,7 +573,7 @@ export default class Sim extends React.Component {
           }else if(this.state.maspais===-3){
             this.state.noes=this.state.noes-3;
             this.state.abs=this.state.abs+3;
-          }else if(this.state.maspais===0){
+          }else if(this.state.maspais===null){
             this.state.abs=this.state.abs+3;
           }
           this.setState({maspais:0});
@@ -587,7 +587,7 @@ export default class Sim extends React.Component {
           }else if(this.state.cup===-2){
             this.state.noes=this.state.noes-2;
             this.state.abs=this.state.abs+2;
-          }else if(this.state.cup===0){
+          }else if(this.state.cup===null){
             this.state.abs=this.state.abs+2;
           }
           this.setState({cup:0});
@@ -601,7 +601,7 @@ export default class Sim extends React.Component {
           }else if(this.state.cc===-2){
             this.state.noes=this.state.noes-2;
             this.state.abs=this.state.abs+2;
-          }else if(this.state.cc===0){
+          }else if(this.state.cc===null){
             this.state.abs=this.state.abs+2;
           }
           this.setState({cc:0});
@@ -615,7 +615,7 @@ export default class Sim extends React.Component {
           }else if(this.state.na===-2){
             this.state.noes=this.state.noes-2;
             this.state.abs=this.state.abs+2;
-          }else if(this.state.na===0){
+          }else if(this.state.na===null){
             this.state.abs=this.state.abs+2;
           }
           this.setState({na:0});
@@ -628,7 +628,7 @@ export default class Sim extends React.Component {
           }else if(this.state.bng===-1){
             this.state.noes=this.state.noes-1;
             this.state.abs=this.state.abs+1;
-          }else if(this.state.bng===0){
+          }else if(this.state.bng===null){
             this.state.abs=this.state.abs+1;
           }
           this.setState({bng:0});
@@ -642,7 +642,7 @@ export default class Sim extends React.Component {
           }else if(this.state.prc===-1){
             this.state.abs=this.state.abs+1;
             this.state.noes=this.state.noes-1;
-          }else if(this.state.prc===0){
+          }else if(this.state.prc===null){
             this.state.abs=this.state.abs+1;
           }
           this.setState({prc:0});
@@ -655,7 +655,7 @@ export default class Sim extends React.Component {
           }else if(this.state.teruel===-1){
             this.state.noes=this.state.noes-1;
             this.state.abs=this.state.abs+1;
-          }else if(this.state.teruel===0){
+          }else if(this.state.teruel===null){
               this.state.abs=this.state.abs+1;
           }
           this.setState({teruel:0});
