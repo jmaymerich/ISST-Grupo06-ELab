@@ -129,12 +129,18 @@ body {
 .SimWin {
   margin-top:1%;
   margin-bottom: 1%;
-  height: 35vh;
-  width: 30%;
-  background-color: rgb(255,255,255);
-  object-fit: fill;
+  height: 450px;
+  background-color: rgb(61,93,152);
+  align: center;
+  align-self: center;
 }
-
+.Graph {
+  margin-top:1%;
+  margin-bottom: 1%;
+  height: 450px;
+  height: 100%;
+  background-color: rgb(61,93,152);
+}
 .CongImg {
   height: 100%
 }
@@ -188,6 +194,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 
 .PartyButton {
   width: 25%;

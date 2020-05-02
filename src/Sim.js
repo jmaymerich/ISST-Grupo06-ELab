@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
+import CanvasJSReact from './canvasjs.react';
+//var CanvasJSReact = require('./canvasjs.react');
+var CanvasJS = CanvasJSReact.CanvasJS;
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 export default class Sim extends React.Component {
 
   constructor(props){
@@ -26,6 +30,7 @@ export default class Sim extends React.Component {
       bng: null,
       prc: null,
       teruel: null,
+      mode:null,
     };
   }
 
@@ -33,8 +38,14 @@ export default class Sim extends React.Component {
 
   render() {
 
-    if(this.state.abs<0){
+    if(this.state.abs <0){
       this.setState({abs:0})
+    }
+    if(this.state.sies <0){
+      this.setState({sies:0})
+    }
+    if(this.state.noes <0){
+      this.setState({noes:0})
     }
     const parties = [
       "PSOE","PP","VOX","UP","ERC",
@@ -42,6 +53,129 @@ export default class Sim extends React.Component {
       "MAS PAIS","CC","CUP",
       "NA+","BNG","PRC","TERUEL"
     ]
+    const graphlist =[
+        "Column 1","Pie 1","Column 2","Pie 2"
+    ]
+    const options0 = {
+      title: {
+        text: "Votations"
+      },
+      data: [{
+                type: "pie",
+                dataPoints: [
+                    { label: "Yes",  y: this.state.sies},
+                    { label: "No", y: this.state.noes},
+
+                ]
+       }]
+
+     }
+     const options1 = {
+       title: {
+         text: "Votations"
+       },
+       data: [{
+                 type: "column",
+                 dataPoints: [
+                   { label: "Yes",  y: this.state.sies},
+                   { label: "No", y: this.state.noes},
+                   { label: "Abstention", y: this.state.abs},
+                 ]
+        }]
+
+    }
+    const options2 = {
+      title: {
+        text: "Votations"
+      },
+      data: [{
+                type: "pie",
+                dataPoints: [
+                  { label: "PSOE",  y: this.state.psoe},
+                  { label: "PP", y: this.state.pp},
+                  { label: "VOX", y: this.state.vox},
+                  { label: "UP",  y: this.state.up},
+                  { label: "ERC", y: this.state.erc},
+                  { label: "Cs", y: this.state.cs},
+                  { label: "JxCAT",  y: this.state.jxcat},
+                  { label: "PNV", y: this.state.pnv},
+                  { label: "EH Bildu", y: this.state.bildu},
+                  { label: "MAS PAIS",  y: this.state.maspais},
+                  { label: "CC", y: this.state.cc},
+                  { label: "CUP", y: this.state.cup},
+                  { label: "NA+",  y: this.state.na},
+                  { label: "BNG", y: this.state.bng},
+                  { label: "PRC", y: this.state.prc},
+                  { label: "TERUEL",  y: this.state.teruel},
+                ]
+       }]
+
+   }
+   const options3 = {
+     title: {
+       text: "Votations"
+     },
+     data: [{
+               type: "column",
+               dataPoints: [
+                 { label: "PSOE",  y: this.state.psoe},
+                 { label: "PP", y: this.state.pp},
+                 { label: "VOX", y: this.state.vox},
+                 { label: "UP",  y: this.state.up},
+                 { label: "ERC", y: this.state.erc},
+                 { label: "Cs", y: this.state.cs},
+                 { label: "JxCAT",  y: this.state.jxcat},
+                 { label: "PNV", y: this.state.pnv},
+                 { label: "EH Bildu", y: this.state.bildu},
+                 { label: "MAS PAIS",  y: this.state.maspais},
+                 { label: "CC", y: this.state.cc},
+                 { label: "CUP", y: this.state.cup},
+                 { label: "NA+",  y: this.state.na},
+                 { label: "BNG", y: this.state.bng},
+                 { label: "PRC", y: this.state.prc},
+                 { label: "TERUEL",  y: this.state.teruel},
+               ]
+      }]
+
+  }
+
+  let graph;
+  if(this.state.mode===0){
+    graph=<div className="Graph">
+     <CanvasJSChart options = {options0}
+          /* onRef = {ref => this.chart = ref} */
+      />
+    </div>;
+  }else if(this.state.mode===1){
+    graph=<div className="Graph">
+     <CanvasJSChart options = {options1}
+          /* onRef = {ref => this.chart = ref} */
+      />
+    </div>;
+  }else if(this.state.mode===2){
+    graph=<div className="Graph">
+     <CanvasJSChart options = {options2}
+          /* onRef = {ref => this.chart = ref} */
+      />
+    </div>;
+  }else if(this.state.mode===3){
+    graph=<div className="Graph">
+     <CanvasJSChart options = {options3}
+          /* onRef = {ref => this.chart = ref} */
+      />
+    </div>;
+  }else{
+    graph=<div className="SimWin">
+      <img className="CongImg" src="/images/congreso.svg"></img>
+    </div>;
+  }
+
+  const buttongraph = graphlist.map((p, i) =>
+    <Button variant="primary" size="sm" onClick={() => {
+      this.setState({mode:i});
+    } }  key={i}>{p}</Button>
+  );
+
     const buttonList = parties.map((p, i) =>
       <span className="PartyButton" key={i}>{p}<p/>
       <Button variant="primary" size="sm" onClick={() => {
@@ -290,6 +424,8 @@ export default class Sim extends React.Component {
           }else if(this.state.vox===52){
             this.state.sies=this.state.sies-52;
             this.state.noes=this.state.noes+52;
+          }else if(this.state.vox===null){
+            this.state.noes=this.state.noes+52;
           }
           this.setState({vox:-52});
           break;
@@ -301,6 +437,8 @@ export default class Sim extends React.Component {
           }else if(this.state.up===35){
             this.state.sies=this.state.sies-35;
             this.state.noes=this.state.noes+35;
+          }else if(this.state.up===null){
+              this.state.noes=this.state.noes+35;
           }
           this.setState({up:-35});
           break;
@@ -311,6 +449,8 @@ export default class Sim extends React.Component {
             this.state.abs=this.state.abs-13;
           }else if(this.state.erc===13){
             this.state.sies=this.state.sies-13;
+            this.state.noes=this.state.noes+13;
+          }else if(this.state.erc===null){
             this.state.noes=this.state.noes+13;
           }
           this.setState({erc:-13});
@@ -323,6 +463,8 @@ export default class Sim extends React.Component {
           }else if(this.state.cs===10){
             this.state.sies=this.state.sies-10;
             this.state.noes=this.state.noes+10;
+          }else if(this.state.cs===null){
+            this.state.noes=this.state.noes+10;
           }
           this.setState({cs:-10});
           break;
@@ -333,6 +475,8 @@ export default class Sim extends React.Component {
             this.state.abs=this.state.abs-8;
           }else if(this.state.jxcat===8){
             this.state.sies=this.state.sies-8;
+            this.state.noes=this.state.noes+8;
+          }else if(this.state.jxcat===null){
             this.state.noes=this.state.noes+8;
           }
           this.setState({jxcat:-8});
@@ -345,6 +489,8 @@ export default class Sim extends React.Component {
           }else if(this.state.pnv===6){
           this.state.sies=this.state.sies-6;
             this.state.noes=this.state.noes+6;
+          }else if(this.state.pnv===null){
+            this.state.noes=this.state.noes+6;
           }
           this.setState({pnv:-6});
           break;
@@ -355,6 +501,8 @@ export default class Sim extends React.Component {
             this.state.abs=this.state.abs-5;
           }else if(this.state.bildu===5){
             this.state.sies=this.state.sies-5;
+            this.state.noes=this.state.noes+5;
+          }else if(this.state.bildu===null){
             this.state.noes=this.state.noes+5;
           }
           this.setState({bildu:-5});
@@ -367,6 +515,8 @@ export default class Sim extends React.Component {
           }else if(this.state.maspais===3){
             this.state.sies=this.state.sies-3;
             this.state.noes=this.state.noes+3;
+          }else if(this.state.maspais===null){
+            this.state.noes=this.state.noes+3;
           }
           this.setState({maspais:-3});
           break;
@@ -377,6 +527,8 @@ export default class Sim extends React.Component {
             this.state.noes=this.state.noes+2;
           }else if(this.state.cup===2){
             this.state.sies=this.state.sies-2;
+            this.state.noes=this.state.noes+2;
+          }else if(this.state.cup===null){
             this.state.noes=this.state.noes+2;
           }
           this.setState({cup:-2});
@@ -389,6 +541,8 @@ export default class Sim extends React.Component {
           }else if(this.state.cc===+2){
             this.state.sies=this.state.sies-2;
             this.state.noes=this.state.noes+2;
+          }else if(this.state.cc===null){
+            this.state.noes=this.state.noes+2;
           }
           this.setState({cc:-2});
           break;
@@ -399,6 +553,8 @@ export default class Sim extends React.Component {
             this.state.noes=this.state.noes+2;
           }else if(this.state.na===+2){
             this.state.sies=this.state.sies-2;
+            this.state.noes=this.state.noes+2;
+          }else if(this.state.na===null){
             this.state.noes=this.state.noes+2;
           }
           this.setState({na:-2});
@@ -411,6 +567,8 @@ export default class Sim extends React.Component {
           }else if(this.state.bng===1){
             this.state.sies=this.state.sies-1;
             this.state.noes=this.state.noes+1;
+          }else if(this.state.bng===null){
+            this.state.noes=this.state.noes+1;
           }
           this.setState({bng:-1});
           break;
@@ -422,6 +580,8 @@ export default class Sim extends React.Component {
           }else if(this.state.prc===1){
             this.state.sies=this.state.sies-1;
             this.state.noes=this.state.noes+1;
+          }else if(this.state.prc===null){
+            this.state.noes=this.state.noes+1;
           }
           this.setState({prc:-1});
           break;
@@ -432,6 +592,8 @@ export default class Sim extends React.Component {
             this.state.noes=this.state.noes+1;
           }else if(this.state.erc===1){
             this.state.sies=this.state.sies-1;
+            this.state.noes=this.state.noes+1;
+          }else if(this.state.teruel===null){
             this.state.noes=this.state.noes+1;
           }
           this.setState({teruel:-1});
@@ -672,9 +834,12 @@ export default class Sim extends React.Component {
 
     return(
       <>
-      <div className="SimWin">
-        <img className="CongImg" src="/images/congreso.svg"></img>
+      <div className="Abs">
+      {buttongraph}
       </div>
+      <div>
+      {graph}
+      </div><p/>
       <div className="SimDisplay">
         <div className="BarNo">
           <div className="BarYes">
@@ -687,13 +852,10 @@ export default class Sim extends React.Component {
         </div>
         <div className="Buttons">
         {buttonList}
-
-
-
-
-
-        </div>
       </div>
+    </div><p/>
+
+
       </>
     );
   }
