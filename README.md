@@ -1,3 +1,7 @@
+# ISST-Grupo06-ELab
+Proyecto Electolab para ISST 2019-2020
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 # Instrucciones de despliegue (en orden)
 
 # BBDD
@@ -26,9 +30,7 @@ Para inicializar la BBDD si está vacía, entrar en Database y pulsar el botón 
 
 
 
-# ISST-Grupo06-ELab
-Proyecto Electolab para ISST 2019-2020
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
