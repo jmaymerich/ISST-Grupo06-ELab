@@ -1,9 +1,9 @@
-#Instrucciones de despliegue (en orden)
+# Instrucciones de despliegue (en orden)
 
-#BBDD
+# BBDD
 La base de datos se arranca de la manera habitual, abriendo un shell y ejecutando java -jar con la ruta de la base de datos H2.
 
-#Backend
+# Backend
 Al ser el servidor de naturaleza estática, no está preparado para que un cliente lo abra directamente. Para poder cargar la base de datos adecuadamente, y que el servidor acepte las peticiones CORS, tenemos que abrir el proyecto con Eclipse y realizar los siguientes pasos:
 
 1.-)En el proyecto ISST-20backend, abrir UploadBBDD. Sustituir en las líneas 51, 78, 100, 124 y 145 la string del estilo "C:/Users/Gonzalo/Desktop/Data/......." por la ruta de la carpeta Data que también se presenta en este repositorio.
@@ -12,10 +12,10 @@ Al ser el servidor de naturaleza estática, no está preparado para que un clien
 
 3.-)Ejecutar el proyecto ISST-20backend con Run as Server... y seleccionando el servidor apropiado. 
 
-#Frontend
+# Frontend
 Desde un bash, cambiar al directorio raíz del front-end y ejecutar npm start.
 
-#Inicializar BBDD
+# Inicializar BBDD
 
 Para inicializar la BBDD si está vacía, entrar en Database y pulsar el botón "Reset BBDD". Ojo, la operación tarda en ejecutarse, por lo que se recomienda esperar 20-30 segundos y actualizar la página.
 
