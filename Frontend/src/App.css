@@ -1,0 +1,440 @@
+/*------------------------------GENERAL CSS STYLES---------------------------*/
+body {
+  background-color: rgba(61,93,152,1) ;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  animation-name: bg;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  height: 100%;
+  margin:0;
+  padding:0;
+}
+
+@keyframes bg {
+  0%   {background-image: url("images/abascal.png");}
+  25%  {background-image: url("images/sanchez.png");}
+  50%  {background-image: url("images/casado.png");}
+  75% {background-image: url("images/iglesias.png");}
+  100% {background-image: url("images/abascal.png");}
+}
+/*------------------------------MAIN PAGE CSS STYLES-------------------------*/
+
+.App {
+  height: 100vh;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  display: flex;
+}
+
+.Title {
+  flex: 1;
+  align-self: center;
+}
+
+.Centered {
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+@font-face {
+  font-family: "Great Vibes";
+  src: url("fonts/GreatVibes-Regular.otf");
+}
+
+#main_Quote {
+  font-family: "Great Vibes";
+  font-size: 35px;
+  margin-bottom: 0.5vh;
+}
+
+#author {
+  font-family: "Great Vibes";
+  font-size: 35px;
+  margin-top: 0px;
+  margin-bottom: 1vh;
+  margin-left: 4vw;
+  text-align: left;
+}
+
+#Logo {
+  margin: 2%;
+}
+
+/*------------------------------DATA PAGE CSS STYLES-------------------------*/
+
+.AppData {
+  height: 75vh;
+  padding-top:2%;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+}
+
+.PolUl {
+  padding-right: 0px;
+  overflow-y: scroll;
+  height: 100%;
+  margin: auto;
+  flex:1;
+  margin-right: 2.5%;
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.Pol{
+  background-color: rgba(200,200,200,0.33);
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  border: 1px black solid;
+}
+
+.Pol:hover{
+  background-color: rgba(255,255,255,1);
+  transition: 0.3s;
+}
+.Pol:active{
+  background-color: rgba(90,90,90,1);
+  color: white;
+}
+
+.PolDiv {
+  flex: 2;
+  height: 100%;
+  margin:auto;
+  background-color: rgba(255,255,255,0.8);
+}
+
+.PolPic {
+
+}
+
+.LogoPic {
+  width: 50%;
+}
+
+/*------------------------------SIM PAGE CSS STYLES-------------------------*/
+
+.AppSim {
+  height: 150vh;
+  padding-top:2%;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(61,93,152)
+}
+.SimWin {
+  margin-top:1%;
+  margin-bottom: 1%;
+  height: 450px;
+  background-color: rgb(61,93,152);
+  align: center;
+  align-self: center;
+}
+.Graph {
+  margin-top:1%;
+  margin-bottom: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 450px;
+  height: 100%;
+  background-color: rgb(61,93,152);
+}
+.CongImg {
+  height: 100%
+}
+
+.SimDisplay {
+  width: 80%;
+  height: 105vh;
+  background-color: rgb(255,255,255);
+  margin-top: 1%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2px;
+}
+
+.BarNo {
+  background-color: red;
+  border: 2px solid black;
+  height: 2vh;
+  width: 90%;
+  margin-top: 1.5%
+}
+.BarYes {
+  background-color: #00FF7F;
+  height: 2vh;
+  width: 45%;
+}
+
+.LawSelect {
+  margin-top:1vh;
+  width: 30%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+.LawDesc {
+  margin-top:1vh;
+  width: 60%;
+  height: 100vh;
+  padding: 1%;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+.VoteCounter{
+  background-color: gray;
+  padding: 1vh;
+  border-radius: 4px;
+  font-size: 2vh;
+  font-weight: bold;
+}
+
+.VoteNum {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-around;
+}
+
+.Yes {
+  background-color: #70f06e;
+  padding: 1vh;
+  border-radius: 4px;
+  align-self: flex-start;
+  font-weight: bold;
+}
+
+.Abs {
+  background-color: #bfbfbf;
+  padding: 1vh;
+  border-radius: 4px;
+  align-self: center;
+
+  font-weight: bold;
+}
+
+.No {
+  background-color: #fa4141;
+  padding: 1vh;
+  border-radius: 4px;
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+.Buttons {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.DivPartido {
+  background-color: gray;
+  border: 1px solid white;
+  display: flex;
+  width: 33%;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+
+.PartyBContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.PartyButton {
+  flex: 1;
+  border: 1px solid blue;
+  border-radius: 2px;
+  background-color: #3385ff
+
+}
+
+.MoreDiv {
+  overflow-y: scroll;
+  height: 10vh;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+
+}
+
+.MoreDivPol{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  width: 100%;
+}
+.MoreDivPolName{
+  width: 70%;
+  align-self: flex-start;
+}
+
+.MoreDivButtons{
+  width: 30%;
+  align-self: flex-end;
+}
+
+
+
+/*------------------------------MANAGE CSS STYLES-------------------------*/
+
+.AppManage {
+  height: 75vh;
+  padding-top:2%;
+  margin-top: 2%;
+  margin-left:auto;
+  margin-right:auto;
+  width: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255,255,255,0.3)
+
+}
+
+.ManageLinkDiv {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+}
+
+.ManageLink {
+  display: inline-block;
+  margin-bottom: 2%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  text-decoration: none;
+  background-color: rgba(255, 255, 225, 0.8);
+  padding: 1%;
+  flex: 1;
+  box-shadow: 2px 2px rgba(0,0,0,0.5);
+}
+
+.CreateForm {
+  width: 65%;
+  background-color: rgba(200,200,200,0.67);
+  height: 100%;
+  margin-bottom: 2vh;
+  padding: 1%;
+  border: 2px solid gray;
+}
+
+.TextInput {
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  width: 60%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.Law {
+  resize: horizontal;
+  height: 42vh;
+  width: 75%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+.Label {
+  font-weight: bold;
+}
+
+.SelectDel {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin-bottom: 5%;
+  margin-top: 25%
+}
+
+.DelButton {
+  background-color: #ff9999;
+  color: black;
+  border: 2px solid #ff0000;
+  padding: 2%;
+  font-weight: bold;
+  width: 60%
+}
+/*------------------------------LINKLIST CSS STYLES-------------------------*/
+
+.Linklist {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.Link {
+  display: inline-block;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1%;
+  flex: 1;
+  border-radius: 5px;
+  box-shadow: 2px 2px rgba(0,0,0,0.5);
+}
+
+.LinklistData {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.LinkData {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  flex: 1;
+  align-self: space-between;
+  border-radius: 5px;
+  box-shadow: 2px 2px rgba(0,0,0,0.5);
+}
+
+.LinklistSim {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.LinkSim {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  flex: 1;
+  align-self: space-between;
+  border-radius: 5px;
+  box-shadow: 2px 2px rgba(0,0,0,0.5);
+}
