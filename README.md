@@ -1,3 +1,31 @@
+#Instrucciones de despliegue (en orden)
+
+#BBDD
+La base de datos se arranca de la manera habitual, abriendo un shell y ejecutando java -jar con la ruta de la base de datos H2.
+
+#Backend
+Al ser el servidor de naturaleza estática, no está preparado para que un cliente lo abra directamente. Para poder cargar la base de datos adecuadamente, y que el servidor acepte las peticiones CORS, tenemos que abrir el proyecto con Eclipse y realizar los siguientes pasos:
+
+1.-)En el proyecto ISST-20backend, abrir UploadBBDD. Sustituir en las líneas 51, 78, 100, 124 y 145 la string del estilo "C:/Users/Gonzalo/Desktop/Data/......." por la ruta de la carpeta Data que también se presenta en este repositorio.
+
+2.-)Aunque se ha proporcionado una carpeta Servers que contiene el proyecto con el servidor Tomcat debidamente configurado, si se prefiriera no importarlo, se puede utilizar un servidor Tomcat 9.0 normal, pero sustituyendo el fichero web.xml por el que aquí se proporciona. Es el mismo que el de un servidor normal pero permitiendo peticiones CORS, para así poder conectar con el front-end de React.
+
+3.-)Ejecutar el proyecto ISST-20backend con Run as Server... y seleccionando el servidor apropiado. 
+
+#Frontend
+Desde un bash, cambiar al directorio raíz del front-end y ejecutar npm start.
+
+#Inicializar BBDD
+
+Para inicializar la BBDD si está vacía, entrar en Database y pulsar el botón "Reset BBDD". Ojo, la operación tarda en ejecutarse, por lo que se recomienda esperar 20-30 segundos y actualizar la página.
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 # ISST-Grupo06-ELab
 Proyecto Electolab para ISST 2019-2020
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
