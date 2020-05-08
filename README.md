@@ -17,7 +17,7 @@ Al ser el servidor de naturaleza estática, no está preparado para que un clien
 3.-)Ejecutar el proyecto ISST-20backend con Run as Server... y seleccionando el servidor apropiado. Es muy importante que esté configurado para ejecutarse en localhost:8080. Por tanto, la url resultante cuando salta el navegador al ejecutar la aplicación en Eclipse debe ser http://localhost:8080/ISST-20-backend/rest/
 
 # Frontend
-Desde un bash, cambiar al directorio raíz del front-end y ejecutar npm start.
+Desde un bash, cambiar al directorio raíz del front-end y ejecutar npm install y npm start.
 
 # Inicializar BBDD
 
