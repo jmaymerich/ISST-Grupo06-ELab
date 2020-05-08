@@ -14,7 +14,7 @@ Al ser el servidor de naturaleza estática, no está preparado para que un clien
 
 2.-)Aunque se ha proporcionado una carpeta Servers que contiene el proyecto con el servidor Tomcat debidamente configurado, si se prefiriera no importarlo, se puede utilizar un servidor Tomcat 9.0 normal, pero sustituyendo el fichero web.xml por el que aquí se proporciona. Es el mismo que el de un servidor normal pero permitiendo peticiones CORS, para así poder conectar con el front-end de React.
 
-3.-)Ejecutar el proyecto ISST-20backend con Run as Server... y seleccionando el servidor apropiado. 
+3.-)Ejecutar el proyecto ISST-20backend con Run as Server... y seleccionando el servidor apropiado. Es muy importante que esté configurado para ejecutarse en localhost:8080. Por tanto, la url resultante cuando salta el navegador al ejecutar la aplicación en Eclipse debe ser http://localhost:8080/ISST-20-backend/rest/
 
 # Frontend
 Desde un bash, cambiar al directorio raíz del front-end y ejecutar npm start.
