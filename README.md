@@ -12,7 +12,7 @@ Al ser el servidor de naturaleza estática, no está preparado para que un clien
 
 1.-)En el proyecto ISST-20backend, abrir UploadBBDD. Sustituir en las líneas 51, 78, 100, 124 y 145 la string del estilo "C:/Users/Gonzalo/Desktop/Data/......." por la ruta de la carpeta Data que también se presenta en este repositorio.
 
-2.-)Aunque se ha proporcionado una carpeta Servers que contiene el proyecto con el servidor Tomcat debidamente configurado, si se prefiriera no importarlo, se puede utilizar un servidor Tomcat 9.0 normal, pero sustituyendo el fichero web.xml por el que aquí se proporciona. Es el mismo que el de un servidor normal pero permitiendo peticiones CORS, para así poder conectar con el front-end de React.
+2.-)Aunque se ha proporcionado una carpeta Servers que contiene el proyecto con el servidor Tomcat debidamente configurado, si se prefiriera no importarlo, se puede utilizar un servidor Tomcat 9.0 normal, pero sustituyendo el fichero web.xml por el que aquí se proporciona (de nuevo, en la carpeta del servidor Tomcat). Es el mismo que el de un servidor normal pero permitiendo peticiones CORS, para así poder conectar con el front-end de React.
 
 3.-)Ejecutar el proyecto ISST-20backend con Run as Server... y seleccionando el servidor apropiado. Es muy importante que esté configurado para ejecutarse en localhost:8080. Por tanto, la url resultante cuando salta el navegador al ejecutar la aplicación en Eclipse debe ser http://localhost:8080/ISST-20-backend/rest/
 
